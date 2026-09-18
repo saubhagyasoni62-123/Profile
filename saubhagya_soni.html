@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saubhagya Soni</title>
+<meta name="description" content="Strategy consulting, product management, and data analytics. Hire Saubhagya Soni — IIT Kanpur · Deloitte USI · Bengaluru.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS (dark-first) ─────────────────────────────── */
+:root {
+  --bg:        #07090F;
+  --bg-2:      #0D0F1C;
+  --bg-card:   #0C0E19;
+  --bg-hover:  #111428;
+  --text:      #E2E5F2;
+  --text-2:    #5E6880;
+  --text-3:    #8A95AA;
+  --blue:      #4D7EFF;
+  --blue-dim:  rgba(77,126,255,0.10);
+  --blue-br:   rgba(77,126,255,0.22);
+  --blue-glow: rgba(77,126,255,0.06);
+  --orange:    #FF5733;
+  --border:    rgba(255,255,255,0.054);
+  --border-2:  rgba(255,255,255,0.10);
+  --nav-bg:    rgba(7,9,15,0.86);
+
+  --display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --body:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --mono:    'Space Mono', monospace;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg:        #F2F4FB;
+    --bg-2:      #E8EAFA;
+    --bg-card:   #ECEEF8;
+    --bg-hover:  #E2E5F5;
+    --text:      #0B0D1A;
+    --text-2:    #5C6480;
+    --text-3:    #7A839A;
+    --blue-dim:  rgba(77,126,255,0.07);
+    --blue-br:   rgba(77,126,255,0.20);
+    --blue-glow: rgba(77,126,255,0.04);
+    --border:    rgba(0,0,0,0.06);
+    --border-2:  rgba(0,0,0,0.11);
+    --nav-bg:    rgba(242,244,251,0.88);
+  }
+}
+:root[data-theme="light"] {
+  --bg:        #F2F4FB;
+  --bg-2:      #E8EAFA;
+  --bg-card:   #ECEEF8;
+  --bg-hover:  #E2E5F5;
+  --text:      #0B0D1A;
+  --text-2:    #5C6480;
+  --text-3:    #7A839A;
+  --blue-dim:  rgba(77,126,255,0.07);
+  --blue-br:   rgba(77,126,255,0.20);
+  --blue-glow: rgba(77,126,255,0.04);
+  --border:    rgba(0,0,0,0.06);
+  --border-2:  rgba(0,0,0,0.11);
+  --nav-bg:    rgba(242,244,251,0.88);
+}
+:root[data-theme="dark"] {
+  --bg:        #07090F;
+  --bg-2:      #0D0F1C;
+  --bg-card:   #0C0E19;
+  --bg-hover:  #111428;
+  --text:      #E2E5F2;
+  --text-2:    #5E6880;
+  --text-3:    #8A95AA;
+  --blue-dim:  rgba(77,126,255,0.10);
+  --blue-br:   rgba(77,126,255,0.22);
+  --blue-glow: rgba(77,126,255,0.06);
+  --border:    rgba(255,255,255,0.054);
+  --border-2:  rgba(255,255,255,0.10);
+  --nav-bg:    rgba(7,9,15,0.86);
+}
+
+/* ── RESET ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 60% at 50% 0%, var(--blue-glow) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+::selection { background: var(--blue); color: #fff; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ── LAYOUT ──────────────────────────────────────────── */
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-inline: 28px;
+}
+.content { position: relative; z-index: 1; }
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 15px;
+}
+.nav-name {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--text);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-links a {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  transition: color 0.18s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 9px 20px;
+  background: var(--orange);
+  color: #fff !important;
+  border-radius: 5px;
+  transition: opacity 0.18s !important;
+}
+.nav-cta:hover { opacity: 0.84 !important; }
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -8%;
+  width: 55%;
+  height: 130%;
+  background: radial-gradient(ellipse 60% 60% at 65% 45%, rgba(77,126,255,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  padding-block: 80px 64px;
+  width: 100%;
+}
+
+.hero-text { flex: 1; min-width: 0; }
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1.5px;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+h1.hero-head {
+  font-family: var(--display);
+  font-size: clamp(3rem, 7.5vw, 5.8rem);
+  font-weight: 800;
+  line-height: 0.93;
+  letter-spacing: -0.035em;
+  color: var(--text);
+  margin-bottom: 30px;
+  text-wrap: balance;
+}
+h1.hero-head .dim {
+  color: var(--text-2);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.hero-pitch {
+  font-size: 1.05rem;
+  color: var(--text-3);
+  max-width: 480px;
+  line-height: 1.72;
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+.hero-pitch strong { color: var(--text); font-weight: 500; }
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+.pill {
+  font-family: var(--mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid var(--border-2);
+  color: var(--text-2);
+  border-radius: 100px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.pill.hi { border-color: var(--blue-br); color: var(--blue); }
+
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+.btn-fill {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 13px 26px;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 6px;
+  display: inline-block;
+  transition: opacity 0.18s, transform 0.18s;
+}
+.btn-fill:hover { opacity: 0.86; transform: translateY(-1px); }
+.btn-ghost {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.18s;
+}
+.btn-ghost:hover { color: var(--text); }
+.btn-ghost::after { content: '↓'; font-size: 1rem; }
+
+/* Photo */
+.hero-photo { flex: 0 0 360px; position: relative; z-index: 1; }
+.hero-photo img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center 8%;
+  border-radius: 16px;
+  -webkit-mask-image: radial-gradient(ellipse 82% 88% at 50% 36%, black 38%, rgba(0,0,0,0.5) 60%, transparent 100%);
+  mask-image: radial-gradient(ellipse 82% 88% at 50% 36%, black 38%, rgba(0,0,0,0.5) 60%, transparent 100%);
+}
+
+/* ── SECTION SHARED ──────────────────────────────────── */
+section { padding-block: 96px; border-top: 1px solid var(--border); }
+
+.s-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.s-label::before {
+  content: '';
+  width: 22px;
+  height: 1.5px;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+.s-title {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  text-wrap: balance;
+  line-height: 1.1;
+}
+
+/* ── SERVICES ────────────────────────────────────────── */
+#services .s-title { margin-bottom: 14px; }
+.svc-intro {
+  font-size: 1rem;
+  color: var(--text-3);
+  max-width: 520px;
+  margin-bottom: 52px;
+  line-height: 1.72;
+  font-weight: 300;
+}
+.svc-intro strong { color: var(--text); font-weight: 500; }
+
+.svc-list { display: flex; flex-direction: column; gap: 10px; }
+
+.svc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 36px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  position: relative;
+  transition: border-color 0.22s, background 0.22s;
+  overflow: hidden;
+}
+.svc-card:hover {
+  border-color: var(--blue-br);
+  background: var(--bg-hover);
+}
+
+/* Gradient corner accent on hover */
+.svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle at 0% 0%, var(--blue-dim) 0%, transparent 70%);
+  border-radius: 12px 0 0 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.svc-card:hover::before { opacity: 1; }
+
+.svc-left { display: flex; flex-direction: column; gap: 18px; }
+
+.svc-num {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.svc-name {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.svc-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.05em;
+  padding: 4px 11px;
+  border: 1px solid var(--border-2);
+  color: var(--text-2);
+  border-radius: 4px;
+}
+
+.svc-right { display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+
+.svc-tagline {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.02rem;
+  color: var(--text-3);
+  line-height: 1.55;
+  border-left: 2px solid var(--blue-br);
+  padding-left: 16px;
+}
+.svc-for {
+  font-size: 0.87rem;
+  color: var(--text-3);
+  line-height: 1.65;
+  font-weight: 300;
+}
+.svc-for strong {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.del-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.del {
+  font-size: 0.78rem;
+  padding: 5px 13px;
+  border: 1px solid var(--border);
+  color: var(--text-3);
+  border-radius: 100px;
+}
+
+/* ── IMPACT ──────────────────────────────────────────── */
+#impact { background: var(--bg-2); }
+#impact .s-title { margin-bottom: 40px; }
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.impact-cell {
+  padding: 40px 28px;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.impact-cell:last-child { border-right: none; }
+.impact-cell::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue) 0%, transparent 100%);
+}
+.impact-num {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.impact-num .acc { color: var(--blue); }
+.impact-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.75;
+}
+
+/* ── PROCESS ─────────────────────────────────────────── */
+#process .s-title { margin-bottom: 40px; }
+
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.proc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  transition: border-color 0.22s;
+}
+.proc-card:hover { border-color: var(--border-2); }
+
+.proc-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--blue-br);
+  border-radius: 50%;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+.proc-card h3 {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.proc-card p {
+  font-size: 0.9rem;
+  color: var(--text-3);
+  line-height: 1.68;
+  font-weight: 300;
+}
+
+/* ── BACKGROUND ──────────────────────────────────────── */
+#background .s-title { margin-bottom: 32px; }
+
+.cred-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.cred-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 20px;
+  transition: border-color 0.2s;
+}
+.cred-card:hover { border-color: var(--border-2); }
+.cred-org {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 7px;
+  letter-spacing: -0.01em;
+}
+.cred-meta {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--text-2);
+  letter-spacing: 0.06em;
+  line-height: 1.9;
+}
+.cert-note {
+  font-size: 0.86rem;
+  color: var(--text-3);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding-block: 96px 64px;
+  position: relative;
+  overflow: hidden;
+}
+footer::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -5%;
+  width: 70%;
+  height: 100%;
+  background: radial-gradient(ellipse 50% 50% at 30% 80%, rgba(77,126,255,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.footer-head {
+  font-family: var(--display);
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: var(--text);
+  margin-bottom: 14px;
+  text-wrap: balance;
+  line-height: 1.04;
+  position: relative;
+  z-index: 1;
+}
+.footer-sub {
+  font-size: 1rem;
+  color: var(--text-3);
+  max-width: 420px;
+  line-height: 1.68;
+  margin-bottom: 36px;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 36px;
+  position: relative;
+  z-index: 1;
+}
+.footer-links a {
+  font-family: var(--mono);
+  font-size: 0.73rem;
+  color: var(--text-2);
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--text); }
+.fine {
+  margin-top: 72px;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-2);
+  letter-spacing: 0.1em;
+  opacity: 0.45;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-inner { flex-direction: column-reverse; padding-block: 56px 48px; gap: 40px; }
+  .hero-photo { flex: none; width: 260px; align-self: center; }
+  .hero-photo img { height: 360px; }
+  h1.hero-head { font-size: clamp(2.6rem, 8vw, 4rem); }
+
+  .svc-card { grid-template-columns: 1fr; gap: 22px; padding: 28px; }
+
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+  .impact-cell:nth-child(2) { border-right: none; }
+  .impact-cell:nth-child(3),
+  .impact-cell:nth-child(4) { border-top: 1px solid var(--border); }
+  .impact-cell:nth-child(4) { border-right: none; }
+
+  .proc-grid { grid-template-columns: 1fr; gap: 10px; }
+
+  .cred-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .wrap { padding-inline: 18px; }
+  section { padding-block: 64px; }
+  .nav-links { display: none; }
+  .hero-photo { width: 220px; }
+  .hero-photo img { height: 300px; }
+  .cred-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="content">
+
+<!-- ── NAV ───────────────────────────────────────────── -->
+<nav>
+  <div class="wrap">
+    <div class="nav-inner">
+      <div class="nav-name">Saubhagya Soni</div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#background">Background</a>
+        <a href="#contact" class="nav-cta">Work with me</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────────── -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+
+      <div class="hero-text">
+        <div class="hero-eyebrow">Available for engagements · Bengaluru, IN</div>
+        <h1 class="hero-head">
+          Strategy.<br>
+          Product.<br>
+          <span class="dim">Data.</span>
+        </h1>
+        <p class="hero-pitch">
+          I help organizations make <strong>sharper strategic decisions</strong>, ship <strong>products that actually work</strong>,
+          and build <strong>data systems that answer real questions</strong>. Five-plus years across Fortune 500 consulting and high-growth startups.
+        </p>
+        <div class="hero-pills">
+          <span class="pill hi">Business Strategy</span>
+          <span class="pill hi">Product Management</span>
+          <span class="pill">Data Analytics</span>
+          <span class="pill">CRM &amp; Retention</span>
+          <span class="pill">IWMS / TRIRIGA</span>
+        </div>
+        <div class="hero-btns">
+          <a class="btn-fill" href="mailto:saubhagyasoni62@gmail.com?subject=Work%20enquiry">Work with me</a>
+          <a class="btn-ghost" href="#services">See services</a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="../Personal/Saubhagya.png" alt="Saubhagya Soni" width="360" height="500">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── SERVICES ──────────────────────────────────────── -->
+<section id="services">
+  <div class="wrap">
+    <div class="s-label">What I offer</div>
+    <h2 class="s-title">Services built around<br>your actual problem</h2>
+    <p class="svc-intro">
+      From <strong>strategy to execution</strong> — I work across business, product, and data.
+      Every engagement starts with understanding the real problem, not the stated one.
+    </p>
+
+    <div class="svc-list">
+
+      <div class="svc-card">
+        <div class="svc-left">
+          <div class="svc-num">01 &mdash; Strategy</div>
+          <div class="svc-name">Business Strategy &amp; Consulting</div>
+          <div class="svc-tools">
+            <span class="chip">Requirements Mapping</span>
+            <span class="chip">Agile Delivery</span>
+            <span class="chip">Stakeholder Mgmt</span>
+            <span class="chip">Fortune 500</span>
+          </div>
+        </div>
+        <div class="svc-right">
+          <p class="svc-tagline">Turn complexity into clear priorities and executable plans — then stay in the room while they're executed.</p>
+          <div class="svc-for">
+            <strong>Good for</strong>
+            Organizations navigating growth, digital transformation, or the gap between what business needs and what technology can deliver.
+          </div>
+          <div class="del-row">
+            <span class="del">Strategic roadmaps</span>
+            <span class="del">Market analysis</span>
+            <span class="del">Implementation plans</span>
+            <span class="del">Vendor evaluation</span>
+            <span class="del">Requirements specs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-left">
+          <div class="svc-num">02 &mdash; Product</div>
+          <div class="svc-name">Product Management &amp; Development</div>
+          <div class="svc-tools">
+            <span class="chip">Web Apps</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Agile Sprints</span>
+            <span class="chip">Prototype → Deploy</span>
+          </div>
+        </div>
+        <div class="svc-right">
+          <p class="svc-tagline">Own the full product journey — from backlog to shipped — and build tools your team will actually use.</p>
+          <div class="svc-for">
+            <strong>Good for</strong>
+            Companies building internal platforms, enterprise apps, or digital products where a PM with technical depth makes the difference.
+          </div>
+          <div class="del-row">
+            <span class="del">Product roadmaps</span>
+            <span class="del">Feature prioritization</span>
+            <span class="del">Custom web apps</span>
+            <span class="del">Admin dashboards</span>
+            <span class="del">Chatbot prototypes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-left">
+          <div class="svc-num">03 &mdash; Data</div>
+          <div class="svc-name">Data Analytics &amp; Reporting</div>
+          <div class="svc-tools">
+            <span class="chip">SQL</span>
+            <span class="chip">Tableau</span>
+            <span class="chip">Excel</span>
+            <span class="chip">Python</span>
+            <span class="chip">Data Pipelines</span>
+          </div>
+        </div>
+        <div class="svc-right">
+          <p class="svc-tagline">Turn raw operational data into decisions your team can act on today, not next quarter.</p>
+          <div class="svc-for">
+            <strong>Good for</strong>
+            Operations, marketing, and product teams sitting on data they cannot interpret, visualize, or use in day-to-day decisions.
+          </div>
+          <div class="del-row">
+            <span class="del">Custom dashboards</span>
+            <span class="del">Automated reporting</span>
+            <span class="del">Analytical frameworks</span>
+            <span class="del">Data audits</span>
+            <span class="del">Trend analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-left">
+          <div class="svc-num">04 &mdash; Retention</div>
+          <div class="svc-name">CRM &amp; Retention Marketing</div>
+          <div class="svc-tools">
+            <span class="chip">CRM Platforms</span>
+            <span class="chip">WhatsApp Automation</span>
+            <span class="chip">Cohort Analysis</span>
+            <span class="chip">CLV Modelling</span>
+          </div>
+        </div>
+        <div class="svc-right">
+          <p class="svc-tagline">Build the systems that bring customers back — and the metrics that prove they're working.</p>
+          <div class="svc-for">
+            <strong>Good for</strong>
+            Consumer brands with churn problems or untapped repeat-purchase potential who need both strategy and hands-on execution.
+          </div>
+          <div class="del-row">
+            <span class="del">Retention playbooks</span>
+            <span class="del">Automated flows</span>
+            <span class="del">CLV models</span>
+            <span class="del">Campaign strategy</span>
+            <span class="del">Segmentation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-left">
+          <div class="svc-num">05 &mdash; IWMS</div>
+          <div class="svc-name">IWMS &amp; Facility Management</div>
+          <div class="svc-tools">
+            <span class="chip">IBM TRIRIGA</span>
+            <span class="chip">Asset Management</span>
+            <span class="chip">Space Analytics</span>
+            <span class="chip">Workflow Design</span>
+          </div>
+        </div>
+        <div class="svc-right">
+          <p class="svc-tagline">Get your TRIRIGA implementation working the way your building actually works — not the other way around.</p>
+          <div class="svc-for">
+            <strong>Good for</strong>
+            Enterprise real estate and facility teams implementing, migrating, or fixing IWMS platforms and asset data integrity.
+          </div>
+          <div class="del-row">
+            <span class="del">TRIRIGA configuration</span>
+            <span class="del">Asset data migration</span>
+            <span class="del">Space dashboards</span>
+            <span class="del">Workflow automation</span>
+            <span class="del">Custom applications</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── IMPACT ─────────────────────────────────────────── -->
+<section id="impact">
+  <div class="wrap">
+    <div class="s-label">Track record</div>
+    <h2 class="s-title" style="margin-bottom:40px">Numbers that matter</h2>
+    <div class="impact-grid">
+      <div class="impact-cell">
+        <div class="impact-num">5<span class="acc">+</span></div>
+        <div class="impact-label">Years across<br>consulting &amp; analytics</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num"><span class="acc">F</span>500</div>
+        <div class="impact-label">Fortune 500<br>clients served</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">₹10<span class="acc">M+</span></div>
+        <div class="impact-label">Budgets planned<br>&amp; managed</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-num">60<span class="acc">+</span></div>
+        <div class="impact-label">Team members<br>led simultaneously</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ────────────────────────────────────────── -->
+<section id="process">
+  <div class="wrap">
+    <div class="s-label">How it works</div>
+    <h2 class="s-title">Every engagement,<br>the same three steps</h2>
+    <p class="svc-intro" style="margin-top:14px">No long ramp-ups. No ambiguous handoffs.</p>
+    <div class="proc-grid">
+      <div class="proc-card">
+        <div class="proc-num">1</div>
+        <h3>Start with the real problem</h3>
+        <p>A 30–60 minute scoping conversation — to understand the actual data landscape, stakeholders, and what "done" really means. Not the stated problem. The real one underneath it.</p>
+      </div>
+      <div class="proc-card">
+        <div class="proc-num">2</div>
+        <h3>Map before building</h3>
+        <p>Before writing a line of SQL or code, I document the solution: what gets measured, what gets automated, what gets handed off. You review and sign off. No surprises mid-build.</p>
+      </div>
+      <div class="proc-card">
+        <div class="proc-num">3</div>
+        <h3>Hand off something working</h3>
+        <p>I build, test against real scenarios, and deliver with documentation your team can use independently. Most engagements include a walkthrough session and a check-in window.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BACKGROUND ─────────────────────────────────────── -->
+<section id="background">
+  <div class="wrap">
+    <div class="s-label">Where I've worked</div>
+    <h2 class="s-title" style="margin-bottom:32px">Background</h2>
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-org">Deloitte USI</div>
+        <div class="cred-meta">Consultant<br>2020–2023 &amp; 2026–Present</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-org">Yes Madam</div>
+        <div class="cred-meta">Sr. Data Analyst<br>Jun–Oct 2025</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-org">DesignItEazy</div>
+        <div class="cred-meta">Co-Founder<br>Product &amp; Strategy</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-org">IIT Kanpur</div>
+        <div class="cred-meta">B.Tech, Mechanical Eng.<br>Minor: Industrial Mgmt · 2020</div>
+      </div>
+    </div>
+    <p class="cert-note">IBM Certified Associate Application Developer — TRIRIGA Application Platform V3.2.1 &nbsp;·&nbsp; Regional Mathematics Olympiad.</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer id="contact">
+  <div class="wrap">
+    <h2 class="footer-head">Tell me what<br>you're working on.</h2>
+    <p class="footer-sub">
+      Whether it's a scoping call, a specific project, or just figuring out if what you need is what I do —
+      send a message and I'll reply within a day.
+    </p>
+    <a class="btn-fill" href="mailto:saubhagyasoni62@gmail.com?subject=Work%20enquiry">Send a message</a>
+    <div class="footer-links">
+      <a href="mailto:saubhagyasoni62@gmail.com">saubhagyasoni62@gmail.com</a>
+      <a href="https://www.linkedin.com/in/saubhagya-soni-0b2349140/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      <a href="tel:+917388696150">+91 73886 96150</a>
+    </div>
+    <div class="fine">SAUBHAGYA SONI &nbsp;&middot;&nbsp; BENGALURU, IN &nbsp;&middot;&nbsp; &copy; 2026</div>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
